@@ -58,10 +58,21 @@ export const truncateText = (text: string, maxLength: number): string => {
 export const extractYouTubeId = (url: string): string | null => {
   if (!url) return null;
   
-  const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+  // Enhanced regex to handle more YouTube URL formats including youtu.be with query params
+  const regExp = /^.*(youtu\.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?\s]*).*/;
   const match = url.match(regExp);
   
-  return match && match[2].length === 11 ? match[2] : null;
+  if (match && match[2] && match[2].length === 11) {
+    return match[2];
+  }
+  
+  // Fallback: try to extract from youtu.be URLs with query parameters
+  const youtuBeMatch = url.match(/youtu\.be\/([^#&\?]+)/);
+  if (youtuBeMatch && youtuBeMatch[1] && youtuBeMatch[1].length === 11) {
+    return youtuBeMatch[1];
+  }
+  
+  return null;
 };
 
 // Generate YouTube thumbnail URL
@@ -108,8 +119,13 @@ export const generateSlug = (title: string): string => {
 export const isValidYouTubeUrl = (url: string): boolean => {
   if (!url) return true; // Empty URL is valid (optional field)
   
-  const youtubeRegex = /^(https?:\/\/)?(www\.)?(youtube\.com\/(watch\?v=|embed\/)|youtu\.be\/)[\w-]+(&[\w=]*)?$/;
-  return youtubeRegex.test(url);
+  try {
+    // Try to extract YouTube video ID - if we can extract it, it's valid
+    const videoId = extractYouTubeId(url);
+    return videoId !== null && videoId.length === 11;
+  } catch {
+    return false;
+  }
 };
 
 // Convert array of strings to formatted text
