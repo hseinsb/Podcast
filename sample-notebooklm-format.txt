@@ -1,0 +1,64 @@
+Sample NotebookLM Format for Podcast Refinery
+=============================================
+
+This file shows the expected format for NotebookLM summaries that work best with Podcast Refinery.
+
+Main Idea: The core concept or central theme discussed in the podcast episode. This should be a clear, concise statement of what the podcast is fundamentally about.
+
+Key Takeaways:
+• First major takeaway or lesson learned from the podcast
+• Second important insight that listeners should remember
+• Third key point that adds value to the audience
+• Fourth takeaway if applicable
+
+Central Problem: The main challenge, issue, or problem that the podcast addresses. This could be a business challenge, personal development issue, or societal problem.
+
+Strengths:
+• First strength mentioned in the discussion
+• Second positive aspect or advantage discussed
+• Third strength or benefit highlighted
+
+Weaknesses:
+• First weakness or limitation identified
+• Second challenge or drawback mentioned
+• Third area for improvement discussed
+
+Counterarguments:
+• First opposing viewpoint or counterargument presented
+• Second alternative perspective mentioned
+• Third contrasting opinion discussed
+
+Practical Lessons:
+• First actionable lesson that can be applied immediately
+• Second practical insight for implementation
+• Third hands-on advice or strategy
+
+Two-Minute Version:
+• First key point for a quick summary
+• Second essential element for brief overview
+• Third crucial point for rapid understanding
+
+Action Checklist:
+• First specific action item or step to take
+• Second concrete task or implementation step
+• Third actionable item for follow-through
+
+Notes:
+- Each section should contain relevant, specific content
+- Use bullet points for list items as shown above
+- Leave sections blank if not covered in the podcast
+- The AI will automatically generate social media hooks, content topics, and monetization ideas
+- You can manually edit any field after processing
+
+Tips for Best Results:
+1. Include specific details rather than generic statements
+2. Use clear, actionable language
+3. Separate different concepts into appropriate sections
+4. Don't worry about perfect formatting - the AI will clean it up
+5. Include speaker name and podcast title if available
+
+Example:
+Speaker: John Doe
+Title: Building Successful Startups in 2024
+
+[Then include the sections above with actual content]

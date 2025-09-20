@@ -1,0 +1,46 @@
+{
+  "name": "podcast-refinery",
+  "version": "1.0.0",
+  "description": "Personal knowledge vault + content engine for podcast notes",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "setup": "node setup.js"
+  },
+  "dependencies": {
+    "@headlessui/react": "^2.1.10",
+    "clsx": "^2.1.1",
+    "firebase": "^10.14.1",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.2",
+    "lucide-react": "^0.446.0",
+    "next": "^15.0.3",
+    "openai": "^4.67.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.12.0",
+    "eslint-config-next": "^15.0.3",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.3"
+  },
+  "keywords": [
+    "podcast",
+    "notes",
+    "firebase",
+    "openai",
+    "content-engine"
+  ],
+  "author": "Hussein",
+  "license": "ISC"
+}
