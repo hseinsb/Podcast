@@ -7,8 +7,18 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 // Format date for display
-export const formatDate = (date: Date | string): string => {
+export const formatDate = (date: Date | string | any): string => {
   if (!date) return '';
+  
+  // Handle Firestore Timestamp objects
+  if (date && typeof date === 'object' && 'toDate' in date) {
+    const dateObj = date.toDate();
+    return new Intl.DateTimeFormat('en-US', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    }).format(dateObj);
+  }
   
   const dateObj = typeof date === 'string' ? new Date(date) : date;
   
@@ -22,8 +32,14 @@ export const formatDate = (date: Date | string): string => {
 };
 
 // Format date for form inputs
-export const formatDateForInput = (date: Date | string): string => {
+export const formatDateForInput = (date: Date | string | any): string => {
   if (!date) return '';
+  
+  // Handle Firestore Timestamp objects
+  if (date && typeof date === 'object' && 'toDate' in date) {
+    const dateObj = date.toDate();
+    return dateObj.toISOString().split('T')[0];
+  }
   
   const dateObj = typeof date === 'string' ? new Date(date) : date;
   
