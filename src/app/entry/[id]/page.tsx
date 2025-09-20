@@ -486,8 +486,8 @@ export default function EntryDetailPage() {
             {isEditing ? (
               <div className="space-y-4">
                 <textarea
-                  value={editedEntry.tags?.join(', ') || ''}
-                  onChange={(e) => setEditedEntry({
+                  value={editedEntry?.tags?.join(', ') || ''}
+                  onChange={(e) => editedEntry && setEditedEntry({
                     ...editedEntry,
                     tags: e.target.value.split(',').map(tag => tag.trim()).filter(tag => tag)
                   })}
