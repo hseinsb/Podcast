@@ -212,7 +212,7 @@ export const copySection = async (title: string, content: string | string[]): Pr
 
 // Export specific sections only
 export const exportSections = (entry: PodcastEntry, sections: (keyof PodcastEntry)[]): string => {
-  const exportData: Partial<PodcastEntry> = {};
+  const exportData: any = {};
   
   sections.forEach(section => {
     if (entry[section] !== undefined) {
